@@ -1,0 +1,25 @@
+
+public class Battleship {
+
+		private int startPos;
+		private int endPos;
+		private int length;
+		
+		
+		
+		
+		
+		public int getPositionA() {
+			return startPos;
+		}
+		public void setPositionA(int positionA) {
+			this.startPos = positionA;
+		}
+		public int getPositionY() {
+			return endPos;
+		}
+		public void setPositionY(int positionY) {
+			this.endPos = positionY;
+		}
+		
+}

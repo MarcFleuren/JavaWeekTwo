@@ -1,0 +1,19 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+
+
+import org.junit.Test;
+
+import defaultpackage.BlackJack;
+
+public class BlackJackTest {
+
+	@Test
+	public void test() {
+		int result = .BlackJack.blackjack(5,5);
+		
+	}
+
+}

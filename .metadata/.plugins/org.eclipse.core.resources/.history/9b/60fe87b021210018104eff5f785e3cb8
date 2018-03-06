@@ -1,0 +1,21 @@
+
+
+	public class Grid {
+		public int[][] grid = new int[3][3];
+
+		public void addBattleship(int startx, int starty, int length, String direction) {
+			
+			if (direction.equals( "right")) {
+				
+				for(int i = 0; i <length; i++) {
+					
+					
+					grid[startx][starty++] = 2;
+					
+				}
+
+			}
+
+		}
+	}
+

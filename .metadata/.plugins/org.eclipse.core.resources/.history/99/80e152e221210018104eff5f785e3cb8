@@ -1,0 +1,14 @@
+
+public class RunnerClass {
+	public static void main(String[] args) {
+Grid grid = new Grid();
+grid.addBattleship(0, 0, 2, "right");
+
+for(int j =0; j<3;j++) {
+	System.out.println();
+	for(int i = 0; i<3; i++) {
+		System.out.print(Grid.grid[j][i]);
+	}
+}
+}
+}

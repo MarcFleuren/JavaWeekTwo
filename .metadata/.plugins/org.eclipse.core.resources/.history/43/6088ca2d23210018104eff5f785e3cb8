@@ -1,0 +1,29 @@
+
+
+	public class Grid {
+		public static int[][] grid = new int[9][9];
+
+		public void addBattleship(int startx, int starty, int length, String direction) {
+			
+			if (direction.equals( "right")) {
+				
+				for(int i = 0; i <length; i++) {
+					
+					
+					grid[startx][starty++] = 2;
+					
+				}
+
+			}
+
+		}
+		public  void printGrid() {
+			for(int j =0; j<9;j++) {
+				System.out.println();
+				for(int i = 0; i<9; i++) {
+					System.out.print(Grid.grid[j][i]);
+				}
+		}
+	}
+	}
+

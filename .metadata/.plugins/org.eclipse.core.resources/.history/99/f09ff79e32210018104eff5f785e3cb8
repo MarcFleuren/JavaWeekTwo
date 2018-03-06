@@ -1,0 +1,21 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+
+
+import org.junit.Test;
+
+import abc.BlackJack;
+
+public class BlackJackTest {
+
+	@Test
+	public void test() {
+		String result = BlackJack.blackjack(21,12);
+		assertEquals("player 1 wins",result);
+		
+		
+	}
+
+}
