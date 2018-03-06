@@ -1,17 +1,17 @@
 
 public class Battleship {
-
-	private int startX;
-	private int startY;
-	private int length;
-	private String direction;
+	public int length;
+	public int startX;
+	public int startY;
+	public String direction;
 
 	public Battleship(int startX, int startY, int length, String direction) {
-		super();
+
 		this.startX = startX;
 		this.startY = startY;
 		this.length = length;
 		this.direction = direction;
+
 	}
 
 	public String getDirection() {
@@ -24,10 +24,6 @@ public class Battleship {
 
 	public int getLength() {
 		return length;
-	}
-
-	public void setLength(int length) {
-		this.length = length;
 	}
 
 	public int getstartX() {

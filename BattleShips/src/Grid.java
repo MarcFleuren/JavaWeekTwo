@@ -1,77 +1,67 @@
 
 public class Grid {
-	public static int[][] grid = new int[9][9];
+	public int[][] grid = new int[9][9];
 
-	public void addBattleship(int startx, int starty, int length, String direction) {
+	public void addBattleship(Battleship b,Grid g) {
 
-		if (direction.equals("right")) {
-			if (((startx < 0 || startx > 9) || (starty < 0 || starty > 9))
-					|| (startx + length > 9 || starty + length > 9)) {
-				System.out.println("Out of Bounds");
+		int startX = b.getstartX();
+		int startY = b.getstartY();
+		if (b.getDirection().equals("right")) {
 
+			if (GameLogic.checkValidPlacement(b.getstartX(), b.getstartY(), b.getLength(), b.getDirection(),g) == true) {
+				for (int i = 0; i < b.getLength(); i++) {
+					g.grid[b.getstartX()][startY++] = 2;
+
+				}
 			} else {
-				boolean overlap = false;
-				for (int i = 0; i < length; i++) {
-
-					if (grid[startx][starty++] == 2) {
-						System.out.println("Overlap");
-						overlap = true;
-					}
-				}
-				if (overlap = false) {
-					for (int i = 0; i < length; i++) {
-						grid[startx][starty++] = 2;
-
-					}
-				} else {
-					System.out.println("Invalid boat placement");
-
-				}
+				System.out.println("Invalid boat placement");
 
 			}
+
 		}
-		if (direction.equals("up")) {
-			if (((startx < 0 || startx > 9) || (starty < 0 || starty > 9))
-					|| (startx + length > 9 || starty + length > 9)) {
+
+		if (b.getDirection().equals("up")) {
+			if (((b.getstartX() < 0 || b.getstartX() > 9) || (b.getstartY() < 0 || b.getstartY() > 9))
+					|| (b.getstartX() + b.getLength() > 9 || b.getstartY() + b.getLength() > 9)) {
 				System.out.println("Out of Bounds");
 
 			} else {
 
-				for (int i = 0; i < length; i++) {
+				for (int i = 0; i < b.getLength(); i++) {
 
-					grid[startx--][starty] = 2;
+					g.grid[startX--][b.getstartY()] = 2;
 
 				}
 
 			}
 
 		}
-		if (direction.equals("left")) {
-			if (((startx < 0 || startx > 9) || (starty < 0 || starty > 9))
-					|| (startx + length > 9 || starty + length > 9)) {
+		if (b.getDirection().equals("left")) {
+			if (((b.getstartX() < 0 || b.getstartX() > 9) || (b.getstartY() < 0 || b.getstartY() > 9))
+					|| (b.getstartX() + b.getLength() > 9 || b.getstartY() + b.getLength() > 9)) {
 				System.out.println("Out of Bounds");
 
 			} else {
 
-				for (int i = 0; i < length; i++) {
+				for (int i = 0; i < b.getLength(); i++) {
 
-					grid[startx][starty--] = 2;
+					g.grid[b.getstartX()][startY--] = 2;
 
 				}
 
 			}
 
 		}
-		if (direction.equals("down")) {
-			if (((startx < 0 || startx > 9) || (starty < 0 || starty > 9))
-					|| (startx + length > 9 || starty + length > 9)) {
+		if (b.getDirection().equals("down")) {
+			if (((b.getstartX() < 0 || b.getstartX() > 9) || (b.getstartY() < 0 || b.getstartY() > 9))
+					|| (b.getstartX() + b.getLength() > 9 || b.getstartY() + b.getLength() > 9)) {
 				System.out.println("Out of Bounds");
 
 			} else {
 
-				for (int i = 0; i < length; i++) {
+				for (int i = 0; i < b.getLength(); i++) {
 
-					grid[startx++][starty] = 2;
+					g.grid[startX++][b.getstartY()] = 2;
 
 				}
 
@@ -80,11 +70,11 @@ public class Grid {
 		}
 	}
 
-	public void printGrid() {
+	public void printGrid(Grid g) {
 		for (int j = 0; j < 9; j++) {
 			System.out.println();
 			for (int i = 0; i < 9; i++) {
-				System.out.print(Grid.grid[j][i]);
+				System.out.print(g.grid[j][i]);
 			}
 		}
 	}
