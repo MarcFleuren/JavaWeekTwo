@@ -33,5 +33,6 @@ public class GameData {
 		System.out.println("win%" + " " + (int) winPercentage1 + "%");
 		System.out.println("aiWins" + " " + (int) aiWinCounter);
 		System.out.println("#draws" + " " + (int) drawCounter);
+		System.out.println("Amrit and Marc Dream Team");
 	}
 }
