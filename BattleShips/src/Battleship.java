@@ -5,6 +5,13 @@ public class Battleship {
 	public int startY;
 	public String direction;
 
+	public Battleship(int length, String direction) {
+
+		this.length = length;
+		this.direction = direction;
+
+	}
+
 	public Battleship(int startX, int startY, int length, String direction) {
 
 		this.startX = startX;
@@ -12,6 +19,32 @@ public class Battleship {
 		this.length = length;
 		this.direction = direction;
 
+	}
+
+	public static void randomNumberStart(Battleship b, Grid g) {
+		boolean valid = false;
+		start: while (valid == false) {
+			double result;
+
+			result = Math.random() * 10;
+			if (result == 0) {
+				continue start;
+			}
+
+			b.setstartX((int) result);
+
+			result = 0;
+			result = Math.random() * 10;
+			if (result == 0) {
+				continue start;
+			}
+
+			b.setstartY((int) result);
+			if (GameLogic.checkValidPlacement(b.getstartX(), b.getstartY(), b.getLength(), b.getDirection(), g) == true) {
+				valid = true;
+
+			}
+		}
 	}
 
 	public String getDirection() {
