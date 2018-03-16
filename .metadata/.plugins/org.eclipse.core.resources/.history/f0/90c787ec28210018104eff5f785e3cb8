@@ -1,9 +1,0 @@
-
-public class GameLogic {
- public boolean checkOverlap(Battleship a,Battleship b) {
-	 
-	 
-	return false;
-	 
- }
-}
